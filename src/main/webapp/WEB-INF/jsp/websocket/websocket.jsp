@@ -8,6 +8,9 @@
 <html>
 <head>
     <base href="<%=basePath%>">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap -->
     <link rel="stylesheet"
           href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -26,7 +29,7 @@
     <title>聊天室</title>
 </head>
 
-<body data="/SSM-WEB">
+<body data="/webchat">
 <input id="text" type="text"/>
 <button onclick="send()">发送</button>
 <button onclick="closeWebSocket()">关闭连接</button>
@@ -78,7 +81,7 @@
 
     //判断当前浏览器是否支持WebSocket
     if ('WebSocket' in window) {
-        websocket = new WebSocket("ws://192.168.0.102:8080/ssm/websocket");
+        websocket = new WebSocket("ws://localhost:8080/ssm/websocket");
     }
     else {
         alert("对不起！你的浏览器不支持webSocket")

@@ -9,21 +9,6 @@
         <welcome-file>turnToIndex.jsp</welcome-file>
     </welcome-file-list>
 
-    <!-- shiro过滤器定义 -->
-    <filter>
-        <filter-name>shiroFilter</filter-name>
-        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
-        <init-param>
-            <!-- 该值缺省为false,表示生命周期由SpringApplicationContext管理,设置为true则表示由ServletContainer管理 -->
-            <param-name>targetFilterLifecycle</param-name>
-            <param-value>true</param-value>
-        </init-param>
-    </filter>
-    <filter-mapping>
-        <filter-name>shiroFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-
     <!-- Spring和mybatis的配置文件 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
@@ -75,19 +60,6 @@
     <session-config>
         <session-timeout>30</session-timeout>
     </session-config>
-
-
-    <!--定义一个cxf的servlet-->
-    <servlet>
-        <servlet-name>CXFServlet</servlet-name>
-        <servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>CXFServlet</servlet-name>
-        <url-pattern>/webservice/*</url-pattern>
-    </servlet-mapping>
-
-
     <!-- druid 监控 -->
     <filter>
         <filter-name>DruidWebStatFilter</filter-name>
